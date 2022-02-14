@@ -95,13 +95,6 @@ bool InitSDL()
 		return false;
 	}
 
-	//check if texture exists before removing it 
-	if (g_texture != nullptr)
-	{
-		SDL_DestroyTexture(g_texture);
-		g_texture = nullptr;
-	}
-
 	return true;
 }
 
@@ -110,6 +103,13 @@ void CloseSDL()
 	// release the window 
 	SDL_DestroyWindow(g_window);
 	g_window = nullptr;
+
+	// clear the texture 
+	FreeTexture();
+
+	// release the renderer
+	SDL_DestroyRenderer(g_renderer);
+	g_renderer = nullptr;
 
 	// quit SDL subsystems
 	IMG_Quit();
@@ -183,5 +183,10 @@ SDL_Texture* LoadTextureFromFile(string path)
 
 void FreeTexture()
 {
-
+	//check if texture exists before removing it 
+	if (g_texture != nullptr)
+	{
+		SDL_DestroyTexture(g_texture);
+		g_texture = nullptr;
+	}
 }

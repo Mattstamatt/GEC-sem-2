@@ -11,6 +11,7 @@ public:
 	Texture2D(SDL_Renderer* renderer);
 	~Texture2D();
 
+
 	bool LoadFromFile(std::string path);
 	void Free();
 	void Render(Vector2D new_position, SDL_RendererFlip flip, double angle = 0.0);

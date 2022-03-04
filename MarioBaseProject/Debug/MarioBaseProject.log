@@ -1,5 +1,8 @@
 ﻿  Character.cpp
+  GameScreenLevel1.cpp
+  GameScreenManager.cpp
+C:\Users\s012515l.STUDENT\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenManager.cpp(47,14): warning C4553: '==': result of expression not used; did you intend '='?
   Source.cpp
   Generating Code...
-  LINK : C:\Users\s012515l.STUDENT\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe not found or not built by the last incremental link; performing full link
+C:\Users\s012515l.STUDENT\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(43): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   MarioBaseProject.vcxproj -> C:\Users\s012515l.STUDENT\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe

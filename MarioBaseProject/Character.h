@@ -1,7 +1,8 @@
 #pragma once
 #include <SDL.h>
 #include <iostream>
-#include "commons.h"
+#include "Commons.h"
+#include "Constants.h"
 #ifndef _CHARACTER_H
 using namespace std;
 
@@ -23,6 +24,11 @@ protected:
 	SDL_Renderer* m_renderer;
 	Vector2D m_position;
 	Texture2D* m_texture;
+	FACING m_facing_direction;
+	bool m_moving_left;
+	bool m_moving_right;
+	virtual void MoveLeft(float deltaTime);
+	virtual void MoveRight(float deltaTime);
 
 
 };

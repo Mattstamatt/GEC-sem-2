@@ -3,8 +3,10 @@
 #define _GAMESCREENLEVEL1_H
 #include "GameScreen.h"
 #include "Commons.h"
+#include "Character.h"
 
 class Texture2D;
+class Character;
 
 class GameScreenLevel1 : GameScreen
 {
@@ -19,6 +21,7 @@ public:
 private:
 	Texture2D* m_background_texture;
 	bool SetUpLevel();
+	Character* my_character;
 };
 
 #endif // _GAMESCREENLEVEL1_H

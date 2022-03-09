@@ -1,10 +1,10 @@
 #include "Character.h"
-#include "Texture2D.h"
 using namespace std;
 
 
 Character::Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position)
 {
+	m_collision_radius = 15.0f;
 	m_moving_left = false;
 	m_moving_right = false;
 	m_facing_direction = FACING_RIGHT;
@@ -35,46 +35,38 @@ void Character::Render()
 	}
 }
 
+void Character::LRender()
+{
+	m_texture->Render(m_position, SDL_FLIP_HORIZONTAL);
+	if (m_facing_direction == FACING_RIGHT)
+	{
+		m_texture->Render(m_position, SDL_FLIP_HORIZONTAL);
+	}
+	else
+	{
+		m_texture->Render(m_position, SDL_FLIP_NONE);
+	}
+}
+
 void Character::Update(float deltaTime, SDL_Event e)
 {
-	// checks the arrow pressed to see what direction the player wants to move mario in 
-	switch (e.type)
+	AddGravity(deltaTime);
+
+	// deal with jumping first
+	if (m_jumping)
 	{
-	case SDL_KEYDOWN:
-		switch (e.key.keysym.sym)
+		//adjust position
+		m_position.y -= m_jump_force * deltaTime;
+
+		//reduce jump force 
+		m_jump_force -= JUMP_FORCE_DECREMENT * deltaTime;
+
+		//is jump force 0?
+		if (m_jump_force <= 0.0f)
 		{
-		case (SDLK_RIGHT):
-			m_moving_right = true;
-			break;
-
-		case (SDLK_LEFT):
-			m_moving_left = true;
-			break;
-
-		default:
-			break;
+			m_jumping = false;
 		}
-	default:
-		break;
-	}
-	switch (e.type)
-	{
-	case SDL_KEYUP:
-		switch (e.key.keysym.sym)
-		{
-		case (SDLK_RIGHT):
-			m_moving_right = false;
-			break;
 
-		case (SDLK_LEFT):
-			m_moving_left = false;
-			break;
-
-		default:
-			break;
-		}
-	default:
-		break;
 	}
 
 	if (m_moving_left)
@@ -95,6 +87,33 @@ void Character::SetPosition(Vector2D new_position)
 Vector2D Character::GetPosition()
 {
 	return m_position;
+}
+
+float Character::GetCollisionRadius()
+{
+	return m_collision_radius;
+}
+
+void Character::AddGravity(float deltaTime)
+{
+	if (m_position.y + 64 <= SCREEN_HEIGHT)
+	{
+		m_position.y += GRAVITY * deltaTime;
+	}
+	else
+	{
+		m_can_jump = true;
+	}
+}
+
+void Character::Jump()
+{
+	if (!m_jumping)
+	{
+		m_jump_force = INITIAL_JUMP_FORCE;
+		m_jumping = true;
+		m_can_jump = false;
+	}
 }
 
 void Character::MoveLeft(float deltaTime)

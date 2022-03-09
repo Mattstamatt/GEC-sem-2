@@ -1,5 +1,6 @@
 #include "GameScreenLevel1.h"
 #include "Texture2D.h"
+#include "Collisions.h"
 #include <iostream>
 using namespace std;
 
@@ -11,7 +12,8 @@ GameScreenLevel1::GameScreenLevel1(SDL_Renderer* renderer) : GameScreen(renderer
 GameScreenLevel1::~GameScreenLevel1()
 {
 	m_background_texture = nullptr;
-	my_character = nullptr;
+	mario_character = nullptr;
+	luigi_character = nullptr;
 }
 
 void GameScreenLevel1::Render()
@@ -19,13 +21,25 @@ void GameScreenLevel1::Render()
 	//draw the background
 	m_background_texture->Render(Vector2D(), SDL_FLIP_NONE);
 	//Draw Mario
-	my_character->Render();
+	mario_character->Render();
+	//Draw Luigi
+	luigi_character->LRender();
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 {
 	//update character 
-	my_character->Update(deltaTime, e);
+	mario_character->MarioUpdate(deltaTime, e);
+	luigi_character->LuigiUpdate(deltaTime, e);
+
+	if (Collisions::Instance()->Circle(mario_character, luigi_character))
+	{
+		cout << "Circle hit!" << endl;
+	}
+	if (Collisions::Instance()->Box())
+	{
+		cout << "Circle hit!" << endl;
+	}
 }
 
 bool GameScreenLevel1::SetUpLevel()
@@ -39,5 +53,6 @@ bool GameScreenLevel1::SetUpLevel()
 	}
 
 	//set up player character
-	my_character = new Character(m_renderer, "Images/Mario.png", Vector2D(64, 330));
+	mario_character = new CharacterMario(m_renderer, "Images/Mario.png", Vector2D(64, 330));
+	luigi_character = new CharacterLuigi(m_renderer, "Images/Luigi.png", Vector2D(64, 330));
 }

@@ -36,10 +36,6 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	{
 		cout << "Circle hit!" << endl;
 	}
-	if (Collisions::Instance()->Box())
-	{
-		cout << "Circle hit!" << endl;
-	}
 }
 
 bool GameScreenLevel1::SetUpLevel()

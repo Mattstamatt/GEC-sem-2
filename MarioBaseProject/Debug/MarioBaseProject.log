@@ -1,5 +1,5 @@
 ﻿  GameScreenLevel1.cpp
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(26,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(26,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(54): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(28,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(28,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(56): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   MarioBaseProject.vcxproj -> C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe

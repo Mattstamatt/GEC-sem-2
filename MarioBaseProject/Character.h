@@ -4,6 +4,8 @@
 #include "Commons.h"
 #include "Constants.h"
 #include "Texture2D.h"
+#include "LevelMap.h"
+
 #ifndef _CHARACTER_H
 using namespace std;
 
@@ -13,7 +15,7 @@ class Character
 {
 
 public:
-	Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position);
+	Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position, LevelMap* map);
 	~Character();
 	virtual void Render();
 	virtual void LRender();
@@ -38,7 +40,7 @@ protected:
 	virtual void MoveLeft(float deltaTime);
 	virtual void MoveRight(float deltaTime);
 	float m_collision_radius;
-
+	LevelMap* m_current_level_map;
 
 };
 

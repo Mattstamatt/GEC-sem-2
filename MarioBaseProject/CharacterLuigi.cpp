@@ -2,7 +2,7 @@
 #include "Character.h"
 #ifndef _CHARACTERLUIGI_H
 
-CharacterLuigi::CharacterLuigi(SDL_Renderer* renderer, string imagePath, Vector2D start_position) : Character(renderer, imagePath, start_position)
+CharacterLuigi::CharacterLuigi(SDL_Renderer* renderer, string imagePath, Vector2D start_position, LevelMap* map) : Character(renderer, imagePath, start_position, map)
 {
 }
 CharacterLuigi::~CharacterLuigi()

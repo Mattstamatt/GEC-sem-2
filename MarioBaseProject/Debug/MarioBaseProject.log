@@ -1,18 +1,5 @@
 ﻿  GameScreenLevel1.cpp
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(28,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(28,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  PowBlock.cpp
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(16,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(17,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(47,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(49,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(49,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(49,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(49,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(51,90): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(51,90): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(51,109): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(51,109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(71): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
-  MarioBaseProject.vcxproj -> C:\Users\s012515l\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(31,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(31,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(78): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
+  MarioBaseProject.vcxproj -> C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe

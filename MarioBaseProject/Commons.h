@@ -33,6 +33,22 @@ struct Rect2D
 	}
 };
 
+struct Circ2D
+{
+	float x;
+	float y;
+	float radius;
+	float diameter;
+
+	Circ2D(float x_pos, float y_pos, float radius, float diameter)
+	{
+		x = x_pos;
+		y = y_pos;
+		this->radius = radius;
+		this->diameter = 2 * radius;
+	}
+};
+
 enum SCREENS
 {
 	SCREEN_INTRO,

@@ -125,7 +125,6 @@ bool Update()
 
 	// get events
 	SDL_PollEvent(&e);
-
 	// handle the events 
 	switch (e.type)
 	{
@@ -133,8 +132,15 @@ bool Update()
 	case SDL_QUIT:
 		return true;
 		break;
-	}
 
+	case SDL_KEYUP:
+		switch (e.key.keysym.sym)
+		{
+		case SDLK_q:
+			return true;
+			break;
+		}
+	}
 	game_screen_manager->Update((float)(new_time - g_old_time) / 1000.0f, e);
 	g_old_time = new_time;
 

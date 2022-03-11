@@ -43,6 +43,7 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	{
 		cout << "Circle hit!" << endl;
 	}
+	UpdatePOWBlock();
 }
 
 void GameScreenLevel1::UpdatePOWBlock()
@@ -53,7 +54,6 @@ void GameScreenLevel1::UpdatePOWBlock()
 		{
 			if (mario_character->IsJumping())
 			{
-				DoScreenShake();
 				m_pow_block->TakeHit();
 				mario_character->CancelJump();
 			}
@@ -65,7 +65,7 @@ bool GameScreenLevel1::SetUpLevel()
 {
 	//load texture
 	m_background_texture = new Texture2D(m_renderer);
-	if (!m_background_texture->LoadFromFile("Images/test.bmp"))
+	if (!m_background_texture->LoadFromFile("Images/BackgroundMB.png"))
 	{
 		cout << "Failed to load backdround texture!" << endl;
 		return false;

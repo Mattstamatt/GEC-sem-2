@@ -2,6 +2,7 @@
 #include "Texture2D.h"
 #include "Collisions.h"
 #include "constants.h"
+#include "PowBlock.h"
 #include <iostream>
 using namespace std;
 
@@ -16,6 +17,8 @@ GameScreenLevel1::~GameScreenLevel1()
 	m_background_texture = nullptr;
 	mario_character = nullptr;
 	luigi_character = nullptr;
+	delete m_pow_block;
+	m_pow_block = nullptr;
 }
 
 void GameScreenLevel1::Render()
@@ -26,6 +29,8 @@ void GameScreenLevel1::Render()
 	mario_character->Render();
 	//Draw Luigi
 	luigi_character->LRender();
+	//call PowBlocks render function
+	m_pow_block->Render();
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
@@ -37,6 +42,22 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	if (Collisions::Instance()->Circle(mario_character, luigi_character))
 	{
 		cout << "Circle hit!" << endl;
+	}
+}
+
+void GameScreenLevel1::UpdatePOWBlock()
+{
+	if (Collisions::Instance()->Box(mario_character->GetCollisionBox(), m_pow_block->GetColisionBox()))
+	{
+		if (m_pow_block != nullptr)
+		{
+			if (mario_character->IsJumping())
+			{
+				DoScreenShake();
+				m_pow_block->TakeHit();
+				mario_character->CancelJump();
+			}
+		}
 	}
 }
 
@@ -53,6 +74,7 @@ bool GameScreenLevel1::SetUpLevel()
 	//set up player character
 	mario_character = new CharacterMario(m_renderer, "Images/Mario.png", Vector2D(64, 330), m_level_map);
 	luigi_character = new CharacterLuigi(m_renderer, "Images/Luigi.png", Vector2D(64, 330), m_level_map);
+	m_pow_block = new PowBlock(m_renderer, m_level_map);
 }
 
 void GameScreenLevel1::SetLevelMap()

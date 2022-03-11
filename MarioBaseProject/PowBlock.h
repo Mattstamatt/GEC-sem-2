@@ -8,10 +8,10 @@
 class PowBlock
 {
 public:
-	PowBlock(SDL_Renderer* LevelMap);
+	PowBlock(SDL_Renderer* renderer, LevelMap* map);
 	~PowBlock();
 	void Render();
-	Rect2D GetColisionBox() { m_position.x, m_position.y, m_single_sprite_w, m_single_sprite_h; }
+	Rect2D GetColisionBox() { return Rect2D(m_position.x, m_position.y, m_single_sprite_w, m_single_sprite_h); }
 	void TakeHit();
 	bool IsAvailable() {return m_num_hits_left > 0;}
 

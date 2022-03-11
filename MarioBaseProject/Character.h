@@ -25,6 +25,7 @@ public:
 	float GetCollisionRadius();
 	void AddGravity(float deltaTime);
 	void Jump();
+	bool IsJumping(bool m_jumping) { return true; }
 	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());}
 
 protected:

@@ -1,5 +1,13 @@
-﻿  GameScreenLevel1.cpp
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(31,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(31,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(78): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
+﻿  PowBlock.cpp
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(16,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(17,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(47,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(50,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(50,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(50,62): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(50,62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(53,90): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(53,90): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(53,109): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(53,109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   MarioBaseProject.vcxproj -> C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe

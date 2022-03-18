@@ -55,5 +55,4 @@ void PowBlock::Render()
 		//draw the sprite
 		m_texture->Render(portion_of_sprite, dest_rect, SDL_FLIP_NONE);
 	}
-	
 }

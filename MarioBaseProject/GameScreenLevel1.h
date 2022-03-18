@@ -31,6 +31,11 @@ private:
 	void SetLevelMap();
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;
+	bool m_screenshake;
+	float m_shake_time;
+	float m_wobble;
+	float m_background_yPos;
+	void DoScreenShake();
 };
 
 #endif // _GAMESCREENLEVEL1_H

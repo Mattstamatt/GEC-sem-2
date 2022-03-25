@@ -28,6 +28,8 @@ public:
 	bool IsJumping() { return true; }
 	void CancelJump() { m_jumping = false;  return; }
 	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());}
+	bool SetAlive(bool IsAlive) {m_alive = IsAlive;}
+	bool GetAlive() { return m_alive; }
 
 protected:
 	SDL_Renderer* m_renderer;
@@ -43,6 +45,7 @@ protected:
 	virtual void MoveRight(float deltaTime);
 	float m_collision_radius;
 	LevelMap* m_current_level_map;
+	bool m_alive;
 
 };
 

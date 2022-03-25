@@ -4,6 +4,7 @@ using namespace std;
 
 Character::Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position, LevelMap* map)
 {
+	m_alive = true;
 	m_current_level_map = map;
 	m_collision_radius = 15.0f;
 	m_moving_left = false;

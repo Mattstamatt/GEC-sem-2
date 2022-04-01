@@ -9,8 +9,8 @@ public:
 	~KoopaCharacter();
 	void TakeDamage();
 	void Jump();
-	virtual void KoopaUpdate(float deltaTime, SDL_Event e);
-	virtual void KoopaRender();
+	virtual void KUpdate(float deltaTime, SDL_Event e);
+	virtual void KRender();
 	bool GetInjured() { return m_injured; }
 
 private:

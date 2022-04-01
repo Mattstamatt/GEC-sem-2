@@ -33,7 +33,7 @@ void KoopaCharacter::Jump()
 	}
 }
 
-void KoopaCharacter::KoopaUpdate(float deltaTime, SDL_Event e)
+void KoopaCharacter::KUpdate(float deltaTime, SDL_Event e)
 {
 	Character::Update(deltaTime, e);
 
@@ -66,7 +66,7 @@ void KoopaCharacter::KoopaUpdate(float deltaTime, SDL_Event e)
 	}
 }
 
-void KoopaCharacter::KoopaRender()
+void KoopaCharacter::KRender()
 {
 	//variable to hold the left position of the sprite we want to draw
 	int left = 0.0f;
@@ -97,6 +97,6 @@ void KoopaCharacter::KoopaRender()
 
 void KoopaCharacter::FlipRightWayUp()
 {
-	m_facing_direction = FACING_LEFT;
+	m_facing_direction != m_facing_direction;
 	m_injured = false;
 }

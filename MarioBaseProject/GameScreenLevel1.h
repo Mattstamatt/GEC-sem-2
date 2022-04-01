@@ -31,6 +31,7 @@ private:
 	bool SetUpLevel();
 	CharacterMario* mario_character;
 	CharacterLuigi* luigi_character;
+	KoopaCharacter* Koopa;
 	void SetLevelMap();
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;

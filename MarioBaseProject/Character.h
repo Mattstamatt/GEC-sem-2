@@ -28,7 +28,7 @@ public:
 	bool IsJumping() { return true; }
 	void CancelJump() { m_jumping = false;  return; }
 	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());}
-	bool SetAlive(bool IsAlive) {m_alive = IsAlive;}
+	bool SetAlive(bool IsAlive) { m_alive = IsAlive; return m_alive; }
 	bool GetAlive() { return m_alive; }
 
 protected:

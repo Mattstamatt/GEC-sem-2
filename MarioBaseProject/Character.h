@@ -18,7 +18,6 @@ public:
 	Character(SDL_Renderer* renderer, string imagePath, Vector2D start_position, LevelMap* map);
 	~Character();
 	virtual void Render();
-	virtual void LRender();
 	virtual void Update(float deltaTime, SDL_Event e);
 	void SetPosition(Vector2D new_position);
 	Vector2D GetPosition();
@@ -28,7 +27,7 @@ public:
 	bool IsJumping() { return true; }
 	void CancelJump() { m_jumping = false;  return; }
 	Rect2D GetCollisionBox() { return Rect2D(m_position.x, m_position.y, m_texture->GetWidth(), m_texture->GetHeight());}
-	bool SetAlive(bool IsAlive) { m_alive = IsAlive; return m_alive; }
+	void SetAlive(bool IsAlive) { m_alive = IsAlive; }
 	bool GetAlive() { return m_alive; }
 
 protected:

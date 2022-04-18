@@ -37,19 +37,6 @@ void Character::Render()
 	}
 }
 
-void Character::LRender()
-{
-	m_texture->Render(m_position, SDL_FLIP_HORIZONTAL);
-	if (m_facing_direction == FACING_RIGHT)
-	{
-		m_texture->Render(m_position, SDL_FLIP_HORIZONTAL);
-	}
-	else
-	{
-		m_texture->Render(m_position, SDL_FLIP_NONE);
-	}
-}
-
 void Character::Update(float deltaTime, SDL_Event e)
 {
 

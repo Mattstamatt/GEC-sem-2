@@ -12,6 +12,19 @@ CharacterMario::~CharacterMario()
 {
 }
 
+void CharacterMario::MRender()
+{
+	m_texture->Render(m_position, SDL_FLIP_NONE);
+	if (m_facing_direction == FACING_RIGHT)
+	{
+		m_texture->Render(m_position, SDL_FLIP_NONE);
+	}
+	else
+	{
+		m_texture->Render(m_position, SDL_FLIP_HORIZONTAL);
+	}
+}
+
 void CharacterMario::MarioUpdate(float deltaTime, SDL_Event e)
 {
 	// checks the arrow pressed to see what direction the player wants to move mario in 

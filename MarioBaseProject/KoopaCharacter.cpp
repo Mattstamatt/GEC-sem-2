@@ -33,40 +33,7 @@ void KoopaCharacter::Jump()
 	}
 }
 
-void KoopaCharacter::KUpdate(float deltaTime, SDL_Event e)
-{
-	Character::Update(deltaTime, e);
-
-	if (!m_injured)
-	{
-		//enemy is not injured so move 
-		if (m_facing_direction == FACING_LEFT)
-		{
-			m_moving_left = true;
-			m_moving_right = false;
-		}
-		else if (m_facing_direction == FACING_RIGHT)
-		{
-			m_moving_left = false;
-			m_moving_right = true;
-		}
-	}
-	else
-	{
-		//we shouldnt move if injured
-		m_moving_right = false;
-		m_moving_left = false;
-
-		//count down injured time
-		m_injured_time -= deltaTime;
-		if (m_injured_time <= 0.0)
-		{
-			FlipRightWayUp();
-		}
-	}
-}
-
-void KoopaCharacter::KRender()
+void KoopaCharacter::Render()
 {
 	//variable to hold the left position of the sprite we want to draw
 	int left = 0.0f;
@@ -95,8 +62,43 @@ void KoopaCharacter::KRender()
 	}
 }
 
+void KoopaCharacter::KoopaUpdate(float deltaTime, SDL_Event e)
+{
+	Character::Update(deltaTime, e);
+
+	if (!m_injured)
+	{
+		//enemy is not injured so move 
+		if (m_facing_direction == FACING_LEFT)
+		{
+			m_moving_left = true;
+			m_moving_right = false;
+		}
+		else if (m_facing_direction == FACING_RIGHT)
+		{
+			m_moving_left = false;
+			m_moving_right = true;
+		}
+	}
+	else
+	{
+		//we shouldnt move if injured
+		m_moving_right = false;
+		m_moving_left = false;
+
+		//count down injured time
+		m_injured_time -= deltaTime;
+
+		if (m_injured_time <= 0.0)
+		{
+			FlipRightWayUp();
+		}
+	}
+}
+
 void KoopaCharacter::FlipRightWayUp()
 {
-	m_facing_direction != m_facing_direction;
+	Jump();
+	m_facing_direction = FACING_RIGHT;
 	m_injured = false;
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "Character.h"
-#ifndef KOOPACHARACHTER
+#ifndef _KOOPACHARACHTER_H
 
 class KoopaCharacter : public Character
 {
@@ -9,8 +9,8 @@ public:
 	~KoopaCharacter();
 	void TakeDamage();
 	void Jump();
-	virtual void KUpdate(float deltaTime, SDL_Event e);
-	virtual void KRender();
+	virtual void KoopaUpdate(float deltaTime, SDL_Event e);
+	virtual void Render();
 	bool GetInjured() { return m_injured; }
 
 private:
@@ -21,8 +21,6 @@ private:
 	float m_movement_speed;
 	Vector2D m_position;
 	void FlipRightWayUp();
-
-
 };
 
 #endif // KoopaCharacter

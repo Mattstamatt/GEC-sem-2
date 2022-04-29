@@ -64,8 +64,6 @@ void KoopaCharacter::Render()
 
 void KoopaCharacter::KoopaUpdate(float deltaTime, SDL_Event e)
 {
-	Character::Update(deltaTime, e);
-
 	if (!m_injured)
 	{
 		//enemy is not injured so move 
@@ -94,6 +92,8 @@ void KoopaCharacter::KoopaUpdate(float deltaTime, SDL_Event e)
 			FlipRightWayUp();
 		}
 	}
+
+	Character::Update(deltaTime, e);
 }
 
 void KoopaCharacter::FlipRightWayUp()

@@ -19,7 +19,6 @@ private:
 	bool m_injured;
 	float m_injured_time;
 	float m_movement_speed;
-	Vector2D m_position;
 	void FlipRightWayUp();
 };
 

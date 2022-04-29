@@ -3,6 +3,7 @@
 #include "Collisions.h"
 #include "constants.h"
 #include "PowBlock.h"
+#include "Coin.h"
 #include <iostream>
 using namespace std;
 
@@ -19,6 +20,8 @@ GameScreenLevel1::~GameScreenLevel1()
 	luigi_character = nullptr;
 	delete m_pow_block;
 	m_pow_block = nullptr;
+	delete m_coin;
+	m_coin = nullptr;
 	m_enemies.clear();
 }
 
@@ -37,6 +40,8 @@ void GameScreenLevel1::Render()
 	luigi_character->LRender();
 	//call PowBlocks render function
 	m_pow_block->Render();
+	//draw the coin
+	m_coin->Render();
 	//draw the background
 	m_background_texture->Render(Vector2D(0, m_background_yPos), SDL_FLIP_NONE);
 }
@@ -71,12 +76,13 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 	}
 
 	UpdatePOWBlock();
+	UpdateCoin();
 	UpdateEnemies(deltaTime, e);
 }
 
 void GameScreenLevel1::UpdatePOWBlock()
 {
-	if (Collisions::Instance()->Box(mario_character->GetCollisionBox(), m_pow_block->GetColisionBox()))
+	if (Collisions::Instance()->Box(mario_character->GetCollisionBox(), m_pow_block->GetCollisionBox()))
 	{
 		if (m_pow_block->IsAvailable())
 		{
@@ -88,7 +94,7 @@ void GameScreenLevel1::UpdatePOWBlock()
 			}
 		}
 	}
-	if (Collisions::Instance()->Box(luigi_character->GetCollisionBox(), m_pow_block->GetColisionBox()))
+	if (Collisions::Instance()->Box(luigi_character->GetCollisionBox(), m_pow_block->GetCollisionBox()))
 	{
 		if (m_pow_block->IsAvailable())
 		{
@@ -100,6 +106,25 @@ void GameScreenLevel1::UpdatePOWBlock()
 			}
 		}
 	}
+}
+
+void GameScreenLevel1::UpdateCoin()
+{
+	if (Collisions::Instance()->Box(mario_character->GetCollisionBox(), m_coin->GetCollisionBox()))
+	{
+		if (m_coin->IsAvailable())
+		{
+			m_coin->CoinPickup();
+		}
+	}
+	if (Collisions::Instance()->Box(luigi_character->GetCollisionBox(), m_coin->GetCollisionBox()))
+	{
+		if (m_coin->IsAvailable())
+		{
+			m_coin->CoinPickup();
+		}
+	}
+	m_coin->CoinSpin();
 }
 
 bool GameScreenLevel1::SetUpLevel()
@@ -118,6 +143,7 @@ bool GameScreenLevel1::SetUpLevel()
 	CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
 	CreateKoopa(Vector2D(325, 32), FACING_RIGHT, KOOPA_SPEED);
 	m_pow_block = new PowBlock(m_renderer, m_level_map);
+	m_coin = new Coin(m_renderer);
 	m_screenshake = false;
 	m_background_yPos = 0.0f;
 }

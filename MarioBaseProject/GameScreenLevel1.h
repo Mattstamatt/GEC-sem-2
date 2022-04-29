@@ -14,6 +14,7 @@ class CharacterMario;
 class CharacterLuigi;
 class KoopaCharacter;
 class PowBlock;
+class Coin;
 
 class GameScreenLevel1 : GameScreen
 {
@@ -25,6 +26,7 @@ public:
 	void Render() override;
 	void Update(float deltaTime, SDL_Event e) override;
 	void UpdatePOWBlock();
+	void UpdateCoin();
 
 private:
 	Texture2D* m_background_texture;
@@ -35,6 +37,7 @@ private:
 	void SetLevelMap();
 	LevelMap* m_level_map;
 	PowBlock* m_pow_block;
+	Coin* m_coin;
 	bool m_screenshake;
 	float m_shake_time;
 	float m_wobble;

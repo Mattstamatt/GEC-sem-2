@@ -161,10 +161,17 @@ bool Update()
 			return true;
 			break;
 
+		case SDLK_m:
+			game_screen_manager->ChangeScreen(SCREEN_MENU);
+			break;
+
 		case SDLK_1:
 			game_screen_manager->ChangeScreen(SCREEN_LEVEL1);
 			break;
 
+		case SDLK_2:
+			game_screen_manager->ChangeScreen(SCREEN_LEVEL2);
+			break;
 		}
 
 	}

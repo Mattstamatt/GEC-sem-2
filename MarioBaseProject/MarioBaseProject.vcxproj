@@ -150,6 +150,7 @@
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="GameScreenLevel1.cpp" />
+    <ClCompile Include="GameScreenLevel2.cpp" />
     <ClCompile Include="GameScreenManager.cpp" />
     <ClCompile Include="GameScreenMenu.cpp" />
     <ClCompile Include="KoopaCharacter.cpp" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="GameScreen.h" />
     <ClInclude Include="GameScreenLevel1.h" />
+    <ClInclude Include="GameScreenLevel2.h" />
     <ClInclude Include="GameScreenManager.h" />
     <ClInclude Include="GameScreenMenu.h" />
     <ClInclude Include="KoopaCharacter.h" />

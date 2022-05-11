@@ -4,7 +4,6 @@
 #include "GameScreen.h"
 #include "Commons.h"
 #include "CharacterMario.h"
-#include "CharacterLuigi.h"
 #include "KoopaCharacter.h"
 #include "LevelMap.h"
 #include <vector>
@@ -32,7 +31,6 @@ private:
 	Texture2D* m_background_texture;
 	bool SetUpLevel();
 	CharacterMario* mario_character;
-	CharacterLuigi* luigi_character;
 	KoopaCharacter* Koopa;
 	void SetLevelMap();
 	LevelMap* m_level_map;

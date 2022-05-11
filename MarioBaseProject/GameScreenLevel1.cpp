@@ -17,7 +17,6 @@ GameScreenLevel1::~GameScreenLevel1()
 {
 	m_background_texture = nullptr;
 	mario_character = nullptr;
-	luigi_character = nullptr;
 	delete m_pow_block;
 	m_pow_block = nullptr;
 	delete m_coin;
@@ -35,8 +34,6 @@ void GameScreenLevel1::Render()
 
 	//Draw Mario
 	mario_character->MRender();
-	//Draw Luigi
-	luigi_character->LRender();
 	//call PowBlocks render function
 	m_pow_block->Render();
 	//draw the coin
@@ -68,12 +65,6 @@ void GameScreenLevel1::Update(float deltaTime, SDL_Event e)
 
 	//update character 
 	mario_character->MarioUpdate(deltaTime, e);
-	luigi_character->LuigiUpdate(deltaTime, e);
-
-	if (Collisions::Instance()->Circle(mario_character, luigi_character))
-	{
-		cout << "Circle hit!" << endl;
-	}
 
 	UpdatePOWBlock();
 	UpdateCoin();
@@ -94,18 +85,6 @@ void GameScreenLevel1::UpdatePOWBlock()
 			}
 		}
 	}
-	if (Collisions::Instance()->Box(luigi_character->GetCollisionBox(), m_pow_block->GetCollisionBox()))
-	{
-		if (m_pow_block->IsAvailable())
-		{
-			if (luigi_character->IsJumping() && m_screenshake == false)
-			{
-				DoScreenShake();
-				m_pow_block->TakeHit();
-				luigi_character->CancelJump();
-			}
-		}
-	}
 }
 
 void GameScreenLevel1::UpdateCoin()
@@ -117,14 +96,6 @@ void GameScreenLevel1::UpdateCoin()
 			m_coin->CoinPickup();
 		}
 	}
-	if (Collisions::Instance()->Box(luigi_character->GetCollisionBox(), m_coin->GetCollisionBox()))
-	{
-		if (m_coin->IsAvailable())
-		{
-			m_coin->CoinPickup();
-		}
-	}
-
 	m_coin->CoinSpin();
 }
 
@@ -141,7 +112,6 @@ bool GameScreenLevel1::SetUpLevel()
 	SetLevelMap();
 	//set up player character
 	mario_character = new CharacterMario(m_renderer, "Images/Mario.png", Vector2D(64, 330), m_level_map);
-	luigi_character = new CharacterLuigi(m_renderer, "Images/Luigi.png", Vector2D(64, 330), m_level_map);
 	CreateKoopa(Vector2D(150, 32), FACING_RIGHT, KOOPA_SPEED);
 	CreateKoopa(Vector2D(325, 32), FACING_RIGHT, KOOPA_SPEED);
 	m_pow_block = new PowBlock(m_renderer, m_level_map);
@@ -222,18 +192,6 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					{
 						//kill mario
 						mario_character->SetAlive(false);
-					}
-				}
-				if (Collisions::Instance()->Circle(m_enemies[i], luigi_character))
-				{
-					if (m_enemies[i]->GetInjured())
-					{
-						m_enemies[i]->SetAlive(false);
-					}
-					else
-					{
-						//kill luigi
-						luigi_character->SetAlive(false);
 					}
 				}
 			}

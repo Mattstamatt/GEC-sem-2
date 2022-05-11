@@ -1,6 +1,7 @@
 #include "GameScreenManager.h"
 #include "GameScreenMenu.h"
 #include "GameScreenLevel1.h"
+#include "GameScreenLevel2.h"
 #include "GameScreen.h"
 #include <iostream>
 using namespace std;
@@ -43,6 +44,8 @@ void GameScreenManager::ChangeScreen(SCREENS new_screen)
 
 	GameScreenLevel1* tempScreen1;
 
+	GameScreenLevel2* tempScreen2;
+
 	switch(new_screen)
 	{
 	case SCREEN_MENU:
@@ -55,6 +58,12 @@ void GameScreenManager::ChangeScreen(SCREENS new_screen)
 		tempScreen1 = new GameScreenLevel1(m_renderer);
 		m_current_screen = (GameScreen*)tempScreen1;
 		tempScreen1 == nullptr;
+		break;
+
+	case SCREEN_LEVEL2:
+		tempScreen2 = new GameScreenLevel2(m_renderer);
+		m_current_screen = (GameScreen*)tempScreen2;
+		tempScreen2 == nullptr;
 		break;
 
 	default:;

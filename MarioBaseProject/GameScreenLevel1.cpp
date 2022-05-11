@@ -124,6 +124,7 @@ void GameScreenLevel1::UpdateCoin()
 			m_coin->CoinPickup();
 		}
 	}
+
 	m_coin->CoinSpin();
 }
 
@@ -136,6 +137,7 @@ bool GameScreenLevel1::SetUpLevel()
 		cout << "Failed to load backdround texture!" << endl;
 		return false;
 	}
+
 	SetLevelMap();
 	//set up player character
 	mario_character = new CharacterMario(m_renderer, "Images/Mario.png", Vector2D(64, 330), m_level_map);
@@ -219,6 +221,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					else
 					{
 						//kill mario
+						mario_character->SetAlive(false);
 					}
 				}
 				if (Collisions::Instance()->Circle(m_enemies[i], luigi_character))
@@ -230,6 +233,7 @@ void GameScreenLevel1::UpdateEnemies(float deltaTime, SDL_Event e)
 					else
 					{
 						//kill luigi
+						luigi_character->SetAlive(false);
 					}
 				}
 			}

@@ -30,7 +30,9 @@ C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM
   GameScreenManager.cpp
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenManager.cpp(47,14): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenManager.cpp(51,14): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenManager.cpp(57,15): warning C4553: '==': result of expression not used; did you intend '='?
+  GameScreenMenu.cpp
   KoopaCharacter.cpp
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(29,114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Character.h(29,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -61,5 +63,6 @@ C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\PowBlock.cpp(53,109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Source.cpp
   Generating Code...
+C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenMenu.cpp(34): warning C4715: 'GameScreenMenu::SetUpMenuScreen': not all control paths return a value
 C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\GameScreenLevel1.cpp(151): warning C4715: 'GameScreenLevel1::SetUpLevel': not all control paths return a value
   MarioBaseProject.vcxproj -> C:\Users\matty\OneDrive - Staffordshire University\Games Engine Creation\GEC SEM 2\GEC-sem-2\MarioBaseProject\Debug\MarioBaseProject.exe

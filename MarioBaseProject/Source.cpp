@@ -37,7 +37,7 @@ int main(int agc, char* args[])
 			Mix_PlayMusic(g_music, -1);
 		}
 
-		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
+		game_screen_manager = new GameScreenManager(g_renderer, SCREEN_MENU);
 		//set time
 		g_old_time = SDL_GetTicks();
 
@@ -149,7 +149,7 @@ bool Update()
 	// handle the events 
 	switch (e.type)
 	{
-		// click the 'X' to quit
+		// click the 'X' or Q to quit
 	case SDL_QUIT:
 		return true;
 		break;
@@ -160,8 +160,15 @@ bool Update()
 		case SDLK_q:
 			return true;
 			break;
+
+		case SDLK_1:
+			game_screen_manager->ChangeScreen(SCREEN_LEVEL1);
+			break;
+
 		}
+
 	}
+
 	game_screen_manager->Update((float)(new_time - g_old_time) / 1000.0f, e);
 	g_old_time = new_time;
 

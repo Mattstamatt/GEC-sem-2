@@ -32,8 +32,7 @@ void GameScreenLevel1::Render()
 	{
 		m_enemies[i]->Render();
 	}
-	//draw the background
-	m_background_texture->Render(Vector2D(), SDL_FLIP_NONE);
+
 	//Draw Mario
 	mario_character->MRender();
 	//Draw Luigi
@@ -44,6 +43,7 @@ void GameScreenLevel1::Render()
 	m_coin->Render();
 	//draw the background
 	m_background_texture->Render(Vector2D(0, m_background_yPos), SDL_FLIP_NONE);
+
 }
 
 void GameScreenLevel1::Update(float deltaTime, SDL_Event e)

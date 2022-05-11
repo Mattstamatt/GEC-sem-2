@@ -10,7 +10,6 @@
 
 class Texture2D;
 class CharacterMario;
-class CharacterLuigi;
 class KoopaCharacter;
 class PowBlock;
 class Coin;
